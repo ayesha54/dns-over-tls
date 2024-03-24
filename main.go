@@ -68,9 +68,9 @@ func startServer(conf config.Config) error {
 	// Start DNS server
 	log.Printf("DNS server is running on %s://%s", conf.Net, server.Addr)
 	if conf.Net == "tcp" {
-		log.Printf("Try in CLI: dig +short +tcp google.com @localhost")
+		log.Printf("Try in CLI: dig +short +tcp google.com @localhost -p 8053")
 	} else {
-		log.Printf("Try in CLI: dig +short google.com @localhost")
+		log.Printf("Try in CLI: dig +short google.com @localhost -p 8053")
 	}
 
 	return server.ListenAndServe()
